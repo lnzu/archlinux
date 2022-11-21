@@ -1,2 +1,2 @@
 # arclinux
-install arclinux
+## quickly install arclinux
