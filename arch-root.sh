@@ -59,7 +59,7 @@ systemctl enable sshd
 # 添加 archlinux 源
 cat >> /etc/pacman.conf <<EOF
 [archlinuxcn]
-Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/\$arch
 EOF
 
 # 最后进行系统更新
