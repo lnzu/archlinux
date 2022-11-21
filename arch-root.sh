@@ -20,13 +20,16 @@ cat > /etc/hosts << EOF
 127.0.1.1   ${hostname}
 EOF
 
+echo "set the root passwd"
 # 为 root 用户设置密码
 passwd root
 
 # 安装引导程序
-read -p "set the grub install location: " grub_dir
 
 pacman -S grub efibootmgr
+
+read -p "set the grub install partion: " grub_dir
+
 grub-install --recheck ${grub_dir}
 
 # 生成 grubconfig 文件
@@ -36,6 +39,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 read -p "add a user: " user
 
 useradd -m -G wheel -s /bin/bash ${user}
+echo "please set the ${user} passwd"
 passwd ${user}
 
 # 设置自动启动程序
