@@ -1,0 +1,2 @@
+# arclinux
+install arclinux
